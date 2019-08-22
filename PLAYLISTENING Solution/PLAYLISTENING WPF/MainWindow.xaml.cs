@@ -12,16 +12,38 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using SpotifyAPI.Web;
+using SpotifyAPI.Web.Enums;
+using SpotifyAPI.Web.Models;
 
 namespace PLAYLISTENING_WPF
 {
-    /// <summary>
-    /// Logika interakcji dla klasy MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
+        public static async void Example()
+        {
+            SpotifyWebAPI api = new SpotifyWebAPI
+            {
+                AccessToken = "XX?X?X",
+                TokenType = "Bearer"
+            };
+
+            PrivateProfile profile = await api.GetPrivateProfileAsync();
+            if (!profile.HasError())
+            {
+                Console.WriteLine(profile.DisplayName);
+
+            }
+            else
+            {
+                Console.WriteLine(profile.Error.Message);
+                Console.WriteLine(profile.Error.Status);
+            }
+        }
+
         public MainWindow()
         {
+            Example();
             InitializeComponent();
         }
     }
