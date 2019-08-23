@@ -6,6 +6,8 @@ using System.Linq;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
+using PLAYLISTENING_WPF.Model;
 using SpotifyAPI.Web;
 using SpotifyAPI.Web.Auth;
 using SpotifyAPI.Web.Enums;
@@ -20,9 +22,17 @@ namespace PLAYLISTENING_WPF.Web
 
         public async Task MakeStringGreatAgain()
         {
-            var getData = await TestGet();
-        }
+            //List<NaszTyp>
+            try
+            {
+                var getData = JsonConvert.DeserializeObject<List<SpotifyData>>(await TestGet());
+            }
+            catch (Exception ex)
+            {
+                var a = ex.Message.ToString();
+            }
 
+        }
 
         public void GetToken()
         {
@@ -49,7 +59,7 @@ namespace PLAYLISTENING_WPF.Web
             try
             {
                 GetToken();
-                HttpWebRequest request = HttpWebRequest.CreateHttp("http://localhost:8888/callback");
+                HttpWebRequest request = HttpWebRequest.CreateHttp(BaseAddress + "artists/1Yox196W7bzVNZI7RBaPnf"); // change address here 
                 request.Method = WebRequestMethods.Http.Get;
                 request.ContentType = "application/json; charset=utf-8";
                 request.Headers.Add(HttpRequestHeader.Authorization, "Bearer " + this.tokenData);
@@ -70,13 +80,10 @@ namespace PLAYLISTENING_WPF.Web
                         response.Close();
                 });
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                // just pass
+                var a = ex.Message.ToString();
             }
-
-
-
 
             return testRequest;
         }
