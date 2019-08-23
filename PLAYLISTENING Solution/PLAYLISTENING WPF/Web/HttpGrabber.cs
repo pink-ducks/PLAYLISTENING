@@ -17,7 +17,7 @@ namespace PLAYLISTENING_WPF.Web
 {
     public class HttpGrabber
     {
-        private string BaseAddress = "https://api.spotify.com/v1/";
+        private string BaseAddress = "https://api.spotify.com";
         private string tokenData;
 
         public async Task MakeStringGreatAgain()
@@ -25,7 +25,9 @@ namespace PLAYLISTENING_WPF.Web
             //List<NaszTyp>
             try
             {
-                var getData = JsonConvert.DeserializeObject<List<SpotifyData>>(await TestGet());
+                var getData = JsonConvert.DeserializeObject<RootObject>(await TestGet());
+
+                //var list = getData
             }
             catch (Exception ex)
             {
@@ -59,7 +61,11 @@ namespace PLAYLISTENING_WPF.Web
             try
             {
                 GetToken();
-                HttpWebRequest request = HttpWebRequest.CreateHttp(BaseAddress + "artists/1Yox196W7bzVNZI7RBaPnf"); // change address here 
+
+                string endPoint = "/v1/artists/1Yox196W7bzVNZI7RBaPnf"; // change address here 
+                string fullAddress = BaseAddress + endPoint;
+
+                HttpWebRequest request = HttpWebRequest.CreateHttp(fullAddress); 
                 request.Method = WebRequestMethods.Http.Get;
                 request.ContentType = "application/json; charset=utf-8";
                 request.Headers.Add(HttpRequestHeader.Authorization, "Bearer " + this.tokenData);
@@ -85,7 +91,7 @@ namespace PLAYLISTENING_WPF.Web
                 var a = ex.Message.ToString();
             }
 
-            return testRequest;
+            return testRequest; // our JSON in String
         }
     }
 }
