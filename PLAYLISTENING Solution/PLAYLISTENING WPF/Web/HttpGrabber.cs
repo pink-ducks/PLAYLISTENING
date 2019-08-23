@@ -22,12 +22,9 @@ namespace PLAYLISTENING_WPF.Web
 
         public async Task MakeStringGreatAgain()
         {
-            //List<NaszTyp>
             try
             {
                 var getData = JsonConvert.DeserializeObject<RootObject>(await TestGet());
-
-                //var list = getData
             }
             catch (Exception ex)
             {
