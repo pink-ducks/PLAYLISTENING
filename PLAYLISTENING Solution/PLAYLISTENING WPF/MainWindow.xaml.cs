@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PLAYLISTENING_WPF.Web;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,32 +13,22 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using PLAYLISTENING_WPF.Web;
-using SpotifyAPI.Web;
-using SpotifyAPI.Web.Auth;
-using SpotifyAPI.Web.Enums;
-using SpotifyAPI.Web.Models;
 
 namespace PLAYLISTENING_WPF
 {
     public partial class MainWindow : Window
     {
-        HttpGrabber http = new HttpGrabber();
+        API_Connector Connector = new API_Connector();
 
         public MainWindow()
         {
-            InitializeComponent(); 
+            InitializeComponent();
         }
 
-        private void OnWindowLoaded(object sender, RoutedEventArgs e)
+        private async void OnWindowLoaded(object sender, RoutedEventArgs e)
         {
-            GetData();
-        }
-
-        private async Task GetData()
-        {
-            var data = await http.MakeStringGreatAgain();
-            // ItemsSource = data.(class name).items;
+            await Connector.ConnectWithAPI();
+            string name = Connector.GetTrackName("5N0tw0DWOriyHNr01Wvl6i");
         }
     }
 }
