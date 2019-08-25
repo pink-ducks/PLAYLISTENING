@@ -18,17 +18,18 @@ namespace PLAYLISTENING_WPF
 {
     public partial class MainWindow : Window
     {
-        API_Connector Connector = new API_Connector();
+        APIConnector Connector = new APIConnector();
+        APIDataGrabber Grabber = new APIDataGrabber();
 
         public MainWindow()
-        {
+        { 
             InitializeComponent();
         }
 
         private async void OnWindowLoaded(object sender, RoutedEventArgs e)
         {
-            await Connector.ConnectWithAPI();
-            string name = Connector.GetTrackName("5N0tw0DWOriyHNr01Wvl6i");
+            await Connector.ConnectWithAPI(Grabber);
+            string name = Grabber.GetTrackName("5N0tw0DWOriyHNr01Wvl6i");
         }
     }
 }
