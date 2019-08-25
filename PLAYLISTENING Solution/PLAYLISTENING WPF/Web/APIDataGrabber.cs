@@ -1,4 +1,5 @@
-﻿using SpotifyAPI.Web;
+﻿using PLAYLISTENING_WPF.Models;
+using SpotifyAPI.Web;
 using SpotifyAPI.Web.Models;
 using System;
 using System.Collections;
@@ -31,17 +32,18 @@ namespace PLAYLISTENING_WPF.Web
             return trackName;
         }
 
-        public ArrayList GetUserPlaylistsIDs(string UserID)
+        public ArrayList GetUserPlaylistsIDs(User user)
         {
             ArrayList PlaylistsIDs = new ArrayList();
             try {
-                Paging<SimplePlaylist> userPlaylists = _spotify.GetUserPlaylists(UserID);
+                Paging<SimplePlaylist> userPlaylists = _spotify.GetUserPlaylists(user.Id);
                 userPlaylists.Items.ForEach(playlist => PlaylistsIDs.Add(playlist.Id));
             }
             catch (Exception ex)
             {
                 var a = ex.Message.ToString();
             }
+            user.PlaylistsIDs = PlaylistsIDs;
             return PlaylistsIDs;
         }
     }

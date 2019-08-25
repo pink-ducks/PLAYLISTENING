@@ -70,6 +70,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Models\User.cs" />
     <Compile Include="Web\APIConnector.cs" />
     <Compile Include="Web\APIDataGrabber.cs" />
     <Page Include="MainWindow.xaml">
