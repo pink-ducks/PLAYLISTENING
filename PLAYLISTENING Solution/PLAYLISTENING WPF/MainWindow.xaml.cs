@@ -1,5 +1,6 @@
 ﻿using PLAYLISTENING_WPF.Web;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -30,6 +31,7 @@ namespace PLAYLISTENING_WPF
         {
             await Connector.ConnectWithAPI(Grabber);
             string name = Grabber.GetTrackName("5N0tw0DWOriyHNr01Wvl6i");
+            ArrayList IDs = Grabber.GetUserPlaylistsIDs("11132603634");
         }
     }
 }
