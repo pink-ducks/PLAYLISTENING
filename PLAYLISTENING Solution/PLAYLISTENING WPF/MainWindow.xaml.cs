@@ -22,13 +22,22 @@ namespace PLAYLISTENING_WPF
 {
     public partial class MainWindow : Window
     {
+        HttpGrabber http = new HttpGrabber();
+
         public MainWindow()
         {
-            HttpGrabber http = new HttpGrabber();
-            http.MakeStringGreatAgain();
-
             InitializeComponent(); 
         }
 
+        private void OnWindowLoaded(object sender, RoutedEventArgs e)
+        {
+            GetData();
+        }
+
+        private async Task GetData()
+        {
+            var data = await http.MakeStringGreatAgain();
+            // ItemsSource = data.(class name).items;
+        }
     }
 }

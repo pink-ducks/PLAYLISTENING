@@ -20,39 +20,29 @@ namespace PLAYLISTENING_WPF.Web
         private string BaseAddress = "https://api.spotify.com";
         private string tokenData;
 
-        public async Task MakeStringGreatAgain()
+        /// <summary>
+        /// Serialize RootObject
+        /// </summary>
+        /// <returns></returns>
+        public async Task<RootObject> MakeStringGreatAgain()
         {
+            RootObject root = new RootObject();
             try
             {
-                var getData = JsonConvert.DeserializeObject<RootObject>(await TestGet());
+                root = JsonConvert.DeserializeObject<RootObject>(await GetFromHttp());
             }
             catch (Exception ex)
             {
                 var a = ex.Message.ToString();
             }
-
+            return root;
         }
 
-        public void GetToken()
-        {
-            string spotifyClient = "2726b49d5bf540e2ab307852eb45a438";
-            string spotifySecret = "5b453a702f944aaeb40d23077aea2d16";
-
-            WebClient webClient = new WebClient();
-
-            NameValueCollection postparams = new NameValueCollection();
-            postparams.Add("grant_type", "client_credentials");
-
-            string authHeader = Convert.ToBase64String(Encoding.Default.GetBytes($"{spotifyClient}:{spotifySecret}"));
-            webClient.Headers.Add(HttpRequestHeader.Authorization, "Basic " + authHeader);
-
-            byte[] tokenResponse = webClient.UploadValues("https://accounts.spotify.com/api/token", postparams);
-
-            string textResponse = Encoding.UTF8.GetString(tokenResponse);
-            this.tokenData = textResponse.Substring(17, 83);
-        }
-
-        public async Task<string> TestGet()
+        /// <summary>
+        /// Get test data from http
+        /// </summary>
+        /// <returns></returns>
+        public async Task<string> GetFromHttp()
         {
             string testRequest = "";
             try
@@ -89,6 +79,25 @@ namespace PLAYLISTENING_WPF.Web
             }
 
             return testRequest; // our JSON in String
+        }
+
+        public void GetToken()
+        {
+            string spotifyClient = "2726b49d5bf540e2ab307852eb45a438";
+            string spotifySecret = "5b453a702f944aaeb40d23077aea2d16";
+
+            WebClient webClient = new WebClient();
+
+            NameValueCollection postparams = new NameValueCollection();
+            postparams.Add("grant_type", "client_credentials");
+
+            string authHeader = Convert.ToBase64String(Encoding.Default.GetBytes($"{spotifyClient}:{spotifySecret}"));
+            webClient.Headers.Add(HttpRequestHeader.Authorization, "Basic " + authHeader);
+
+            byte[] tokenResponse = webClient.UploadValues("https://accounts.spotify.com/api/token", postparams);
+
+            string textResponse = Encoding.UTF8.GetString(tokenResponse);
+            this.tokenData = textResponse.Substring(17, 83);
         }
     }
 }
