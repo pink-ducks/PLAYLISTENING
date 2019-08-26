@@ -21,7 +21,8 @@ namespace PLAYLISTENING_WPF
     public partial class MainWindow : Window
     {
         APIConnector Connector = new APIConnector();
-        APIDataGrabber Grabber = new APIDataGrabber();
+        APIDataGrabber Grabber = new APIDataGrabber(); // download data from API
+        User User = new User("11132603634"); // app user
 
         public MainWindow()
         { 
@@ -30,10 +31,10 @@ namespace PLAYLISTENING_WPF
 
         private async void OnWindowLoaded(object sender, RoutedEventArgs e)
         {
-            await Connector.ConnectWithAPI(Grabber);
-            string name = Grabber.GetTrackName("5N0tw0DWOriyHNr01Wvl6i");
-            User user = new User("11132603634");
-            ArrayList IDs = Grabber.GetUserPlaylistsIDs(user);
+            await Connector.ConnectWithAPI();
+            
+            Connector.GiveSpotifyAccessFor(Grabber);
+            Grabber.UploadUserData(User);
         }
     }
 }
