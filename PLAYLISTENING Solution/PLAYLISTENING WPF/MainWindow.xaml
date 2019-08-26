@@ -6,11 +6,12 @@
         xmlns:local="clr-namespace:PLAYLISTENING_WPF"
         mc:Ignorable="d"
         Height="455.22" Width="801.044" 
-        Loaded="Window_Loaded" 
-        WindowStyle="None"
-        ResizeMode="CanResizeWithGrip" 
-        AllowsTransparency="True">
-    
+        Loaded="Window_Loaded" WindowStartupLocation="CenterScreen" AllowsTransparency="True" WindowStyle="None">
+
+    <WindowChrome.WindowChrome>
+        <WindowChrome GlassFrameThickness="0,0,0,1" CornerRadius="0" />
+    </WindowChrome.WindowChrome>
+
     <Grid x:Name="MainGrid" Margin="0">
         <Grid.Background>
             <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
@@ -19,7 +20,7 @@
             </LinearGradientBrush>
         </Grid.Background>
         <Border x:Name="LeftBorder" BorderBrush="#FF121212" BorderThickness="0.1" HorizontalAlignment="Left" Width="162" Grid.ColumnSpan="4" Background="#FF121212"/>
-        <Border x:Name="BottomBorder" BorderBrush="#FF1DB954" BorderThickness="0.1" Height="15" VerticalAlignment="Bottom" Width="801" Background="#FF1DB954" Margin="0"/>
-        <Label x:Name="HomeLabel" Foreground ="AntiqueWhite" FontFamily="Montserrat" Content="Home" VerticalAlignment="Top" Margin="0,46,633,0" Height="40" TextOptions.TextHintingMode="Animated" Grid.ColumnSpan="4" RenderTransformOrigin="0.315,0.348" HorizontalAlignment="Center" FontSize="20" FontWeight="Bold"/>
+        <Border x:Name="BottomBorder" BorderBrush="#FF1DB954" BorderThickness="0.1" Height="15" VerticalAlignment="Bottom" Background="#FF1DB954" Margin="0,440,0,0"/>
+        <Label x:Name="HomeLabel" Foreground ="AntiqueWhite" FontFamily="Montserrat" Content="Home" VerticalAlignment="Top" Margin="47,46,681,0" TextOptions.TextHintingMode="Animated" RenderTransformOrigin="0.315,0.348" FontSize="20" FontWeight="Bold" HorizontalAlignment="Left"/>
     </Grid>
 </Window>

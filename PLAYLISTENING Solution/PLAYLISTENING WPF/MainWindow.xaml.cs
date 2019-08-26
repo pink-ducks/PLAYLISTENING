@@ -36,5 +36,6 @@ namespace PLAYLISTENING_WPF
             Connector.GiveSpotifyAccessFor(Grabber);
             Grabber.UploadUserData(User);
         }
+
     }
 }
