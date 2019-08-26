@@ -8,9 +8,6 @@ using System.Windows;
 
 namespace PLAYLISTENING_WPF
 {
-    /// <summary>
-    /// Logika interakcji dla klasy App.xaml
-    /// </summary>
     public partial class App : Application
     {
     }

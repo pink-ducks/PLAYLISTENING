@@ -29,10 +29,10 @@ namespace PLAYLISTENING_WPF
             InitializeComponent();
         }
 
-        private async void OnWindowLoaded(object sender, RoutedEventArgs e)
+        private async void Window_Loaded(object sender, RoutedEventArgs e)
         {
             await Connector.ConnectWithAPI();
-            
+
             Connector.GiveSpotifyAccessFor(Grabber);
             Grabber.UploadUserData(User);
         }
