@@ -5,17 +5,20 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PLAYLISTENING_WPF"
         mc:Ignorable="d"
-        Title="Playlisting by PinkDucks" Height="455.22" Width="801.044" ResizeMode="NoResize">
+        Title="Playlisting by PinkDucks" FontFamily="Montserrat" Height="455.22" Width="801.044" ResizeMode="NoResize">
     <Grid>
-
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="56*"/>
-            <ColumnDefinition Width="739*"/>
+            <ColumnDefinition Width="28*"/>
+            <ColumnDefinition Width="11*"/>
+            <ColumnDefinition Width="29*"/>
+            <ColumnDefinition Width="329*"/>
         </Grid.ColumnDefinitions>
-        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="370" VerticalAlignment="Top" Width="162" Grid.ColumnSpan="2" Background="Black"/>
-        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="370" VerticalAlignment="Top" Width="141" Margin="597,0,0,0" Grid.Column="1" Background="Black"/>
-        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="56" Margin="0,370,0,-0.4" VerticalAlignment="Top" Width="794" Grid.ColumnSpan="2" Background="#FF2F2D2D"/>
-        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="370" VerticalAlignment="Top" Width="490.873" Grid.Column="1" Margin="105.997,0,0,0">
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="370" VerticalAlignment="Top" Width="162" Grid.ColumnSpan="4" Background="Black">
+            <Image Margin="9.2,40.2,105.8,301.8" Source="home.jpg" Stretch="Uniform"/>
+        </Border>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="370" VerticalAlignment="Top" Width="141" Margin="517,0,0,0" Grid.Column="3" Background="Black"/>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="56" Margin="0,370,0,-0.4" VerticalAlignment="Top" Width="794" Grid.ColumnSpan="4" Background="#FF2F2D2D"/>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="370" VerticalAlignment="Top" Width="517" Grid.Column="3" Margin="0.2,0,0,0">
             <Border.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="Black" Offset="0.888"/>
@@ -26,7 +29,16 @@
                 </LinearGradientBrush>
             </Border.Background>
         </Border>
-        <Label x:Name="MenuLabel" Foreground ="AntiqueWhite" Content="Home" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="28,40,0,0" Height="30.36" Width="129" TextOptions.TextHintingMode="Animated" Grid.ColumnSpan="2"/>
+        <Label x:Name="MenuLabel" Foreground ="AntiqueWhite" FontFamily="Montserrat" Content="Home" VerticalAlignment="Top" Margin="0,46,29.8,0" Height="25" TextOptions.TextHintingMode="Animated" Grid.ColumnSpan="2" RenderTransformOrigin="0.315,0.348" Grid.Column="1">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-0.626"/>
+                    <TranslateTransform X="-0.041" Y="0.103"/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
 
     </Grid>
 </Window>
