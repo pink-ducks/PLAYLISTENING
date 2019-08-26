@@ -5,9 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PLAYLISTENING_WPF"
         mc:Ignorable="d"
-
-        FontFamily="Montserrat" Height="455.22" Width="801.044" WindowStyle="None" Loaded="Window_Loaded">
-    <Grid x:Name="MainGrid" Margin="0" Height="447" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="793">
+        Height="455.22" Width="801.044" 
+        Loaded="Window_Loaded" 
+        WindowStyle="None"
+        ResizeMode="CanResizeWithGrip" 
+        AllowsTransparency="True">
+    
+    <Grid x:Name="MainGrid" Margin="0">
         <Grid.Background>
             <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
                 <GradientStop Color="#FF212121" Offset="0.338"/>
