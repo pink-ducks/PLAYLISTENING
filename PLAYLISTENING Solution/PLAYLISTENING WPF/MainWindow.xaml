@@ -7,9 +7,15 @@
         mc:Ignorable="d"
 
         FontFamily="Montserrat" Height="455.22" Width="801.044" ResizeMode="NoResize" WindowStyle="None">
-    <Grid x:Name="MainGrid" Background="#FF2C2F33" HorizontalAlignment="Center" VerticalAlignment="Center" Height="455" Width="801">
-        <Border x:Name="LeftBorder" BorderThickness="0" HorizontalAlignment="Left" Width="162" Grid.ColumnSpan="4" Background="#FF23272A"/>
-        <Border x:Name="BottomBorder" BorderBrush="Black" BorderThickness="0" HorizontalAlignment="Center" Height="25" VerticalAlignment="Bottom" Width="801" Grid.ColumnSpan="4" Background="#FF7289DA"/>
-        <Label x:Name="HomeLabel" Foreground ="AntiqueWhite" FontFamily="Montserrat" Content="Home" VerticalAlignment="Top" Margin="0,46,633,0" Height="25" TextOptions.TextHintingMode="Animated" Grid.ColumnSpan="4" RenderTransformOrigin="0.315,0.348" HorizontalAlignment="Center"/>
+    <Grid x:Name="MainGrid" HorizontalAlignment="Center" VerticalAlignment="Center" Height="455" Width="801">
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                <GradientStop Color="#FF212121" Offset="0.338"/>
+                <GradientStop Color="#FF535353"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Border x:Name="LeftBorder" BorderBrush="#FF121212" BorderThickness="0.1" HorizontalAlignment="Left" Width="162" Grid.ColumnSpan="4" Background="#FF121212"/>
+        <Border x:Name="BottomBorder" BorderBrush="#FF1DB954" BorderThickness="0.1" HorizontalAlignment="Center" Height="15" VerticalAlignment="Bottom" Width="801" Grid.ColumnSpan="4" Background="#FF1DB954"/>
+        <Label x:Name="HomeLabel" Foreground ="AntiqueWhite" FontFamily="Montserrat" Content="Home" VerticalAlignment="Top" Margin="0,46,633,0" Height="40" TextOptions.TextHintingMode="Animated" Grid.ColumnSpan="4" RenderTransformOrigin="0.315,0.348" HorizontalAlignment="Center" FontSize="20" FontWeight="Bold"/>
     </Grid>
 </Window>
