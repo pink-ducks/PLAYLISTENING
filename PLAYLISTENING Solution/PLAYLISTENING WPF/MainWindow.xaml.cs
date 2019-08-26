@@ -1,4 +1,7 @@
-﻿using System;
+﻿using PLAYLISTENING_WPF.Models;
+using PLAYLISTENING_WPF.Web;
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,14 +18,23 @@ using System.Windows.Shapes;
 
 namespace PLAYLISTENING_WPF
 {
-    /// <summary>
-    /// Logika interakcji dla klasy MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
+        APIConnector Connector = new APIConnector();
+        APIDataGrabber Grabber = new APIDataGrabber(); // download data from API
+        User User = new User("11132603634"); // app user
+
         public MainWindow()
-        {
+        { 
             InitializeComponent();
+        }
+
+        private async void OnWindowLoaded(object sender, RoutedEventArgs e)
+        {
+            await Connector.ConnectWithAPI();
+            
+            Connector.GiveSpotifyAccessFor(Grabber);
+            Grabber.UploadUserData(User);
         }
     }
 }

@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PLAYLISTENING_WPF"
         mc:Ignorable="d"
+
         Title="Playlisting by PinkDucks" FontFamily="Montserrat" Height="455.22" Width="801.044" ResizeMode="NoResize">
     <Grid>
         <Grid.ColumnDefinitions>
@@ -39,6 +40,5 @@
                 </TransformGroup>
             </Label.RenderTransform>
         </Label>
-
     </Grid>
 </Window>
