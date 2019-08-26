@@ -12,9 +12,9 @@ namespace PLAYLISTENING_WPF.Web
 {
     public class APIDataGrabber
     {
-        private SpotifyWebAPI _spotify;
+        private SpotifyWebAPI spotify;
 
-        public SpotifyWebAPI Spotify { get => _spotify; set => _spotify = value; }
+        public SpotifyWebAPI Spotify { get => spotify; set => spotify = value; }
         public void UploadUserData(User user)
         {
             user.Name = this.GetUserName(user.Id);
@@ -27,8 +27,8 @@ namespace PLAYLISTENING_WPF.Web
 
             try
             {
-                PublicProfile Profile = _spotify.GetPublicProfile(userId);
-                userName = Profile.DisplayName;
+                PublicProfile profile = spotify.GetPublicProfile(userId);
+                userName = profile.DisplayName;
             }
             catch (Exception ex)
             {
@@ -39,33 +39,33 @@ namespace PLAYLISTENING_WPF.Web
         }
         public ArrayList GetUserPlaylistsIDs(string userId)
         {
-            ArrayList PlaylistsIDs = new ArrayList();
+            ArrayList playlistsIDs = new ArrayList();
             try {
-                Paging<SimplePlaylist> userPlaylists = _spotify.GetUserPlaylists(userId);
-                userPlaylists.Items.ForEach(playlist => PlaylistsIDs.Add(playlist.Id));
+                Paging<SimplePlaylist> userPlaylists = spotify.GetUserPlaylists(userId);
+                userPlaylists.Items.ForEach(playlist => playlistsIDs.Add(playlist.Id));
             }
             catch (Exception ex)
             {
                 var a = ex.Message.ToString();
             }
 
-            return PlaylistsIDs;
+            return playlistsIDs;
         }
 
         public string GetUserImageURL(string userId)
         {
-            string ImageURL = "";
+            string imageURL = "";
 
             try
             {
-                PublicProfile Profile = _spotify.GetPublicProfile(userId);
-                if (Profile.Images.Count > 0)
+                PublicProfile profile = spotify.GetPublicProfile(userId);
+                if (profile.Images.Count > 0)
                 {
-                    ImageURL = Profile.Images[0].Url;
+                    imageURL = profile.Images[0].Url;
                 }
                 else
                 {
-                    ImageURL = null;
+                    imageURL = null;
                 }
             }
             catch (Exception ex)
@@ -73,7 +73,7 @@ namespace PLAYLISTENING_WPF.Web
                 var a = ex.Message.ToString();
             }
 
-            return ImageURL;
+            return imageURL;
         }
     }
 }

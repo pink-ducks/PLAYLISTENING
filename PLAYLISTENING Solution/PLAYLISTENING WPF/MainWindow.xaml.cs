@@ -22,7 +22,7 @@ namespace PLAYLISTENING_WPF
     {
         APIConnector Connector = new APIConnector();
         APIDataGrabber Grabber = new APIDataGrabber(); // download data from API
-        User User = new User("11132603634"); // app user
+        User User = new User("11132603634"); // app user ("user_id")
 
         public MainWindow()
         { 

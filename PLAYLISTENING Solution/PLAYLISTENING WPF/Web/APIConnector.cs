@@ -12,15 +12,16 @@ namespace PLAYLISTENING_WPF.Web
 {
     public class APIConnector
     {
-        private string _clientId = "2726b49d5bf540e2ab307852eb45a438";
-        private string _clientSecretId = "5b453a702f944aaeb40d23077aea2d16";
-        private SpotifyWebAPI _spotify;
+        private string clientId = "2726b49d5bf540e2ab307852eb45a438";
+        private string clientSecretId = "5b453a702f944aaeb40d23077aea2d16";
+        private SpotifyWebAPI spotify;
+
         public async Task ConnectWithAPI()
         {
-            CredentialsAuth auth = new CredentialsAuth(_clientId, _clientSecretId);
+            CredentialsAuth auth = new CredentialsAuth(clientId, clientSecretId);
             Token token = await auth.GetToken();
 
-            _spotify = new SpotifyWebAPI()
+            spotify = new SpotifyWebAPI()
             {
                 AccessToken = token.AccessToken,
                 TokenType = token.TokenType
@@ -28,7 +29,7 @@ namespace PLAYLISTENING_WPF.Web
         }
         public void GiveSpotifyAccessFor(APIDataGrabber grabber)
         {
-            grabber.Spotify = this._spotify;
+            grabber.Spotify = this.spotify;
         }
 
     }
