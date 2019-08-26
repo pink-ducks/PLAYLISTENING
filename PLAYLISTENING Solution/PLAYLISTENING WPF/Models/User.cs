@@ -9,17 +9,17 @@ namespace PLAYLISTENING_WPF.Models
 {
     public class User
     {
-        private string _id;
-        private string _name;
-        private string _imageURL;
-        private ArrayList _playlistsIDs;
+        private string id;
+        private string name;
+        private string imageURL;
+        private ArrayList playlistsIDs;
 
-        public string Id { get => _id; set => _id = value; }
-        public string Name { get => _name; set => _name = value; }
-        public string ImageURL { get => _imageURL; set => _imageURL = value; }
-        public ArrayList PlaylistsIDs { get => _playlistsIDs; set => _playlistsIDs = value; }
+        public string Id { get => id; set => id = value; }
+        public string Name { get => name; set => name = value; }
+        public string ImageURL { get => imageURL; set => imageURL = value; }
+        public ArrayList PlaylistsIDs { get => playlistsIDs; set => playlistsIDs = value; }
         // constructor
-        public User(string id) => this._id = id;
+        public User(string id) => this.id = id;
     }
 
     
