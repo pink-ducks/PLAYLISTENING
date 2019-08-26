@@ -5,8 +5,28 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PLAYLISTENING_WPF"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Playlisting by PinkDucks" Height="455.22" Width="801.044" ResizeMode="NoResize">
     <Grid>
-        
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="56*"/>
+            <ColumnDefinition Width="739*"/>
+        </Grid.ColumnDefinitions>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="370" VerticalAlignment="Top" Width="162" Grid.ColumnSpan="2" Background="Black"/>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="370" VerticalAlignment="Top" Width="141" Margin="597,0,0,0" Grid.Column="1" Background="Black"/>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="56" Margin="0,370,0,-0.4" VerticalAlignment="Top" Width="794" Grid.ColumnSpan="2" Background="#FF2F2D2D"/>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="370" VerticalAlignment="Top" Width="490.873" Grid.Column="1" Margin="105.997,0,0,0">
+            <Border.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="0.888"/>
+                    <GradientStop Color="#FF232222" Offset="0.993"/>
+                    <GradientStop Color="#FF0F0E0E" Offset="0.834"/>
+                    <GradientStop Color="#FF3C3434" Offset="0.078"/>
+                    <GradientStop Color="#FF322F2F" Offset="0.135"/>
+                </LinearGradientBrush>
+            </Border.Background>
+        </Border>
+        <Label x:Name="MenuLabel" Foreground ="AntiqueWhite" Content="Home" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="28,40,0,0" Height="30.36" Width="129" TextOptions.TextHintingMode="Animated" Grid.ColumnSpan="2"/>
+
     </Grid>
 </Window>
