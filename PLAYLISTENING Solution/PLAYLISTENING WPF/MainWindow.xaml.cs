@@ -25,8 +25,9 @@ namespace PLAYLISTENING_WPF
         User User = new User("11132603634"); // app user ("user_id")
 
         public MainWindow()
-        { 
+        {
             InitializeComponent();
+           
         }
 
         private async void Window_Loaded(object sender, RoutedEventArgs e)
@@ -36,6 +37,47 @@ namespace PLAYLISTENING_WPF
             Connector.GiveSpotifyAccessFor(Grabber);
             Grabber.UploadUserData(User);
         }
+        private void ButtonFechar_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
 
-    }
+     }
+    /*
+            private void Button_Click_1(object sender, RoutedEventArgs e)
+            {
+
+            }
+
+            private void Button_Click_2(object sender, RoutedEventArgs e)
+            {
+
+            }
+
+            private void Button_Click_3(object sender, RoutedEventArgs e)
+            {
+
+            }
+
+            private void Button_Click_4(object sender, RoutedEventArgs e)
+            {
+
+            }
+
+            private void ListViewItem_Selected(object sender, RoutedEventArgs e)
+            {
+
+            }
+
+            private void ListViewItem_Selected_1(object sender, RoutedEventArgs e)
+            {
+
+            }
+
+            private void ListViewMenu_SelectionChanged(object sender, SelectionChangedEventArgs e)
+            {
+
+            }
+        }*/
 }
+
