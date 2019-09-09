@@ -55,7 +55,7 @@
                         <TextBlock Text="Home"  Foreground ="AntiqueWhite" FontFamily="Montserrat" VerticalAlignment="Top" Margin="21,13,0,-5.4" TextOptions.TextHintingMode="Animated" RenderTransformOrigin="0.88,0.106" FontSize="15"  FontWeight="Bold" Height="35" Width="52"/>
                     </StackPanel>
                 </ListViewItem>
-                <Label Content="TOP 3 SOUL MATES" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="15" Foreground ="AntiqueWhite" FontFamily="Montserrat" Height="33" Width="150"/>
+                <Label Content="TOP 3 SOUL MATES" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="14" Foreground ="AntiqueWhite" FontFamily="Montserrat" Height="33" Width="155"/>
                 <ListViewItem Height="60" Width="126">
                     <StackPanel Orientation="Horizontal">
                         <TextBlock Text="One" FontSize="17" VerticalAlignment="Center" Margin="20 0"/>
@@ -71,7 +71,7 @@
                         <TextBlock Text="Three" FontSize="17" VerticalAlignment="Center" Margin="20 0"/>
                     </StackPanel>
                 </ListViewItem>
-                <Label Content="PLAYLISTY" HorizontalAlignment="Left" VerticalAlignment="Top" FontWeight="Bold" FontSize="15" Foreground ="AntiqueWhite" FontFamily="Montserrat" Height="33" Width="150"/>
+                <Label Content="PLAYLISTS" HorizontalAlignment="Left" VerticalAlignment="Top" FontWeight="Bold" FontSize="15" Foreground ="AntiqueWhite" FontFamily="Montserrat" Height="33" Width="150"/>
                 <ListViewItem Height="57" Width="136">
                     <StackPanel Orientation="Horizontal">
                         <TextBlock Text="Playlist1" FontSize="17" VerticalAlignment="Center" Margin="20 0"/>
@@ -89,10 +89,10 @@
         <Image HorizontalAlignment="Left" Height="26" VerticalAlignment="Top" Width="37" Grid.Column="1" Margin="399.2,12,0,0" RenderTransformOrigin="-0.322,0.469" />
 
         <materialDesign:PackIcon Kind="User" VerticalAlignment="Center" Foreground ="AntiqueWhite" Grid.Column="1" Margin="437.2,11,0,16.6" Height="22" Width="16" RenderTransformOrigin="0.206,-0.1"/>
-        <StackPanel HorizontalAlignment="Right" Width="571" Height="598" VerticalAlignment="Top">
-            <Label x:Name="CompareYourPlaylistsLabel" Content="COMPARE YOUR PLAYLISTS" FontWeight="Bold" FontSize="30" Foreground ="AntiqueWhite" FontFamily="Montserrat" Margin="0,105,0,0" Height="66" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Right" Width="571"/>
+        <StackPanel HorizontalAlignment="Stretch" Height="598" VerticalAlignment="Top" Margin="230,0,0,0">
+            <Label x:Name="CompareYourPlaylistsLabel" Content="COMPARE YOUR PLAYLISTS" FontWeight="Bold" FontSize="30" Foreground ="AntiqueWhite" FontFamily="Montserrat" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Center" Margin="0,50,0,0" HorizontalAlignment="Center"/>
         </StackPanel>
-        <StackPanel x:Name="CompareYourPlaylistsPanel"  Orientation="Horizontal" Margin="240,95,6,148" RenderTransformOrigin="0.5,0.5">
+        <StackPanel x:Name="CompareYourPlaylistsPanel"  Orientation="Horizontal" Margin="231,108,0,280" RenderTransformOrigin="0.5,0.5">
             <StackPanel.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
