@@ -89,10 +89,10 @@
         <Image HorizontalAlignment="Left" Height="26" VerticalAlignment="Top" Width="37" Grid.Column="1" Margin="399.2,12,0,0" RenderTransformOrigin="-0.322,0.469" />
 
         <materialDesign:PackIcon Kind="User" VerticalAlignment="Center" Foreground ="AntiqueWhite" Grid.Column="1" Margin="437.2,11,0,16.6" Height="22" Width="16" RenderTransformOrigin="0.206,-0.1"/>
-        <StackPanel Margin="9,10,-9,-10">
-            <Label Content="COMPARE YOUR PLAYLISTS" FontWeight="Bold" FontSize="30" Foreground ="AntiqueWhite" FontFamily="Montserrat" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="309,105,0,0" Height="66" Width="381"/>
+        <StackPanel HorizontalAlignment="Right" Width="571" Height="598" VerticalAlignment="Top">
+            <Label x:Name="CompareYourPlaylistsLabel" Content="COMPARE YOUR PLAYLISTS" FontWeight="Bold" FontSize="30" Foreground ="AntiqueWhite" FontFamily="Montserrat" Margin="0,105,0,0" Height="66" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Right" Width="571"/>
         </StackPanel>
-        <StackPanel  Orientation="Horizontal" Margin="240,95,6,148" RenderTransformOrigin="0.5,0.5">
+        <StackPanel x:Name="CompareYourPlaylistsPanel"  Orientation="Horizontal" Margin="240,95,6,148" RenderTransformOrigin="0.5,0.5">
             <StackPanel.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -102,13 +102,13 @@
                 </TransformGroup>
             </StackPanel.RenderTransform>
             <Button Margin="8,0,8,8.2" Width="140" Background="Transparent" BorderBrush="{x:Null}" HorizontalAlignment="Center" VerticalAlignment="Center">
-                <Image Source ="C:\Users\User\Documents\GitHub\PLAYLISTENING\PLAYLISTENING Solution\Resource\PROSZE TEGO NIE USUWAC\Queen.png" Height="145" Width="155"/>
+                <Image Source ="Queen.png" Height="145" Width="155"/>
             </Button>
             <Button Margin="8,0,8,8.2" Width="152" Background="Transparent" BorderBrush="{x:Null}" HorizontalAlignment="Center" VerticalAlignment="Center">
-                <Image Source ="C:\Users\User\Documents\GitHub\PLAYLISTENING\PLAYLISTENING Solution\Resource\PROSZE TEGO NIE USUWAC\EdSheeran.png" Height="145" Width="152"/>
+                <Image Source ="Queen.png" Height="145" Width="152"/>
             </Button>
             <Button Margin="8,0,8,8.2" Width="152" Background="Transparent" BorderBrush="{x:Null}" HorizontalAlignment="Center" VerticalAlignment="Center">
-                <Image Source ="C:\Users\User\Documents\GitHub\PLAYLISTENING\PLAYLISTENING Solution\Resource\PROSZE TEGO NIE USUWAC\TheBeatels.png" Stretch="None" Height="145" Width="152"/>
+                <Image Source ="Queen.png" Height="145" Width="152"/>
             </Button>
         </StackPanel>
 

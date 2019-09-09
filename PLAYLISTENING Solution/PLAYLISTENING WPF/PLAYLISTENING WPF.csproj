@@ -123,28 +123,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Image1.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Queen.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Queen1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Queen2.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Queen3.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Queen4.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Queen5.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Queen6.png" />
+    <Resource Include="pinkducks.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
