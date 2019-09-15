@@ -37,12 +37,26 @@ namespace PLAYLISTENING_WPF
             Connector.GiveSpotifyAccessFor(Grabber);
             Grabber.UploadUserData(User);
         }
+   
         private void ButtonFechar_Click(object sender, RoutedEventArgs e)
         {
             Application.Current.Shutdown();
         }
 
-     }
+        private void Grid_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            DragMove();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.MainWindow.WindowState = WindowState.Maximized;
+        }
+        private void ButtonMin_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.MainWindow.WindowState = WindowState.Minimized;
+        }
+    }
     /*
             private void Button_Click_1(object sender, RoutedEventArgs e)
             {
