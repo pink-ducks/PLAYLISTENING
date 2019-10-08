@@ -29,21 +29,18 @@
             </LinearGradientBrush>
         </Grid.Background>
         <Grid Background="Black" MouseDown="Grid_MouseDown">
-            <StackPanel VerticalAlignment="Top" Margin="5,0,-5.2,0">
-                <Grid Background="Black" Height="10"/>
-                <Grid Margin="5">
-                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="10 0">
-                        <Button Width="30" Height="30" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" Foreground="#FF17381A" VerticalAlignment="Top" Click="ButtonMin_Click">
-                            <materialDesign:PackIcon Kind="WindowMinimize" Foreground="White"/>
-                        </Button>
-                        <Button Width="30" Height="30" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" Foreground="White" Margin="0 0 10 0" Click="Button_Click" VerticalAlignment="Top">
-                            <materialDesign:PackIcon Kind="WindowMaximize" Foreground="White"/>
-                        </Button>
-                        <Button x:Name="ButtonFechar" Width="30" Height="30" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" Foreground="Gray" Click="ButtonFechar_Click">
-                            <materialDesign:PackIcon Kind="Power" Foreground="White"/>
-                        </Button>
-                    </StackPanel>
-                </Grid>
+            <StackPanel VerticalAlignment="Top">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="10 0">
+                    <Button Width="30" Height="30" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" Foreground="#FF17381A" VerticalAlignment="Top" Click="ButtonMin_Click">
+                        <materialDesign:PackIcon Kind="WindowMinimize" Foreground="White"/>
+                    </Button>
+                    <Button Width="30" Height="30" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" Foreground="White" Margin="0 0 10 0" Click="Button_Click" VerticalAlignment="Top">
+                        <materialDesign:PackIcon Kind="WindowMaximize" Foreground="White"/>
+                    </Button>
+                    <Button x:Name="ButtonFechar" Width="30" Height="30" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" Foreground="Gray" Click="ButtonFechar_Click">
+                        <materialDesign:PackIcon Kind="Power" Foreground="White"/>
+                    </Button>
+                </StackPanel>
             </StackPanel>
         </Grid>
         <Grid Width="230" HorizontalAlignment="Left" Background="#FF222222">
@@ -87,7 +84,7 @@
                 </ListViewItem>
             </ListView>
         </Grid>
-        <Border x:Name="BottomBorder" BorderBrush="#FF1DB954" BorderThickness="0.1" Height="15" VerticalAlignment="Bottom" Background="#FF1DB954" Margin="2,0,-2.2,0"/>
+        <Border x:Name="BottomBorder" BorderBrush="#FF1DB954" BorderThickness="0.1" Height="15" VerticalAlignment="Bottom" Background="#FF1DB954" Margin="0,0,0,0"/>
         <Image HorizontalAlignment="Left" Height="26" VerticalAlignment="Top" Width="37" Grid.Column="1" Margin="399.2,12,0,0" RenderTransformOrigin="-0.322,0.469" />
         <StackPanel Margin="265,50,35,515.4">
             <Label Content="COMPARE YOUR PLAYLISTS" FontWeight="Bold" FontSize="30" Foreground ="AntiqueWhite" FontFamily="Montserrat" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="20" Height="66" Width="381"/>
@@ -114,7 +111,7 @@
                 <Image Source ="Queen.png" Height="145" Width="152"/>
             </Button>
             <Button Margin="8,0,8,8.2" Width="152" Background="Transparent" BorderBrush="{x:Null}" HorizontalAlignment="Center" VerticalAlignment="Center">
-                <Image Source ="C:\Users\User\Documents\GitHub\PLAYLISTENING\PLAYLISTENING Solution\Resource\PROSZE TEGO NIE USUWAC\TheBeatels.png" Stretch="UniformToFill" Height="145" Width="152"/>
+                <Image Source ="Queen.png" Stretch="UniformToFill" Height="145" Width="152"/>
             </Button>
             <Button Margin="8,10,8,0" Width="47" Background="Transparent" BorderBrush="{x:Null}" HorizontalAlignment="Center" VerticalAlignment="Center" Height="170">
                 <materialDesign:PackIcon Kind="ArrowRightBold" Foreground="White" Height="41" Width="29"/>
@@ -133,14 +130,14 @@
                 <materialDesign:PackIcon Kind="ArrowLeftBold" Foreground="White" Height="41" Width="29"/>
             </Button>
             <Button Margin="8,0,8,8.2" Width="140" Background="Transparent" BorderBrush="{x:Null}" HorizontalAlignment="Center" VerticalAlignment="Center">
-                <Image Source ="C:\Users\User\Documents\GitHub\PLAYLISTENING\PLAYLISTENING Solution\Resource\PROSZE TEGO NIE USUWAC\Piere.png" Stretch="UniformToFill" Height="145" Width="155"/>
+                <Image Source ="Queen.png" Stretch="UniformToFill" Height="145" Width="155"/>
             </Button>
 
             <Button Margin="8,0,8,8.2" Width="152" Background="Transparent" BorderBrush="{x:Null}" HorizontalAlignment="Center" VerticalAlignment="Center">
-                <Image Source ="C:\Users\User\Documents\GitHub\PLAYLISTENING\PLAYLISTENING Solution\Resource\PROSZE TEGO NIE USUWAC\Charles.png" Stretch="UniformToFill" Height="145" Width="152"/>
+                <Image Source ="Queen.png" Stretch="UniformToFill" Height="145" Width="152"/>
             </Button>
             <Button Margin="8,0,8,8.2" Width="152" Background="Transparent" BorderBrush="{x:Null}" HorizontalAlignment="Center" VerticalAlignment="Center">
-                <Image Source ="C:\Users\User\Documents\GitHub\PLAYLISTENING\PLAYLISTENING Solution\Resource\PROSZE TEGO NIE USUWAC\Lewis.PNG" Stretch="Fill" Height="145" Width="152"/>
+                <Image Source ="Queen.png" Stretch="Fill" Height="145" Width="152"/>
             </Button>
             <Button Margin="8,33,8,31.4" Width="47" Background="Transparent" BorderBrush="{x:Null}" HorizontalAlignment="Center" VerticalAlignment="Center" Height="170">
                 <materialDesign:PackIcon Kind="ArrowRightBold" Foreground="White" Height="41" Width="29"/>
