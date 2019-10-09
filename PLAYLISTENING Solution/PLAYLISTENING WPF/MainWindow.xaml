@@ -46,41 +46,45 @@
         </Grid>
         <Grid Width="230" HorizontalAlignment="Left" Background="#FF222222">
             <materialDesign:TransitioningContent OpeningEffect="{materialDesign:TransitionEffect SlideInFromLeft, Duration=0:0:0.2}" Margin="0,0,25,0">
-                <Grid x:Name="GridCursor" Margin="0,39,175.6,0" Background="#FF1DB954" Width="5" HorizontalAlignment="Right" Height="40" VerticalAlignment="Top"/>
+                <Grid x:Name="GridCursor" Margin="0,40,190,0" Background="#FF1DB954" Width="5" HorizontalAlignment="Right" Height="40" VerticalAlignment="Top"/>
             </materialDesign:TransitioningContent>
-            <ListView x:Name="ListViewMenu" Margin="30,30,25,91.4" Background ="#FF222222" BorderBrush="#FF121212" Foreground="AntiqueWhite" FontFamily="Montserrat" FontSize="17">
+            <ListView x:Name="ListViewMenu" Margin="15,30,10,91" Background ="#FF222222" BorderBrush="#FF121212" Foreground="AntiqueWhite" FontFamily="Montserrat" FontSize="17">
                 <ListViewItem Height="55" Width="135" Background="#FF222222">
                     <StackPanel Orientation="Horizontal">
                         <materialDesign:PackIcon Kind="Home" Width="30" Height="30" VerticalAlignment="Center" Margin="-7,3,3,3" RenderTransformOrigin="0.153,0.457"/>
                         <TextBlock Text="Home"  Foreground ="AntiqueWhite" FontFamily="Montserrat" VerticalAlignment="Top" Margin="2,13,0,-5.4" TextOptions.TextHintingMode="Animated" RenderTransformOrigin="0.88,0.106" FontSize="15"  FontWeight="Bold" Height="36" Width="57"/>
                     </StackPanel>
                 </ListViewItem>
-                <Label Content="TOP 3 SOUL MATES" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="15" Foreground ="AntiqueWhite" FontFamily="Montserrat" Height="33" Width="150"/>
-                <ListViewItem Height="48" Width="112" Margin="20 0">
+                <Label Content="TOP 3 SOUL MATES" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="15" Foreground ="AntiqueWhite" FontFamily="Montserrat" Height="33" Width="165"/>
+                <ListViewItem Height="48" Width="149">
 
                     <StackPanel Orientation="Horizontal" >
-                        <TextBlock Text="One" FontSize="17" VerticalAlignment="Center" Margin="20 0"/>
+                        <TextBlock Text="Mateusz" FontSize="17" VerticalAlignment="Center"/>
                     </StackPanel>
                 </ListViewItem>
-                <ListViewItem Height="48" Width="112" Margin="20 0">
-                    <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="Two " FontSize="17" VerticalAlignment="Center" Margin="20 0"/>
+                <ListViewItem Height="48" Width="149">
+
+                    <StackPanel Orientation="Horizontal" >
+                        <TextBlock Text="Kuba" FontSize="17" VerticalAlignment="Center"/>
                     </StackPanel>
                 </ListViewItem>
-                <ListViewItem Height="48" Width="112" Margin="20 0">
-                    <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="Three" FontSize="17" VerticalAlignment="Center" Margin="20 0"/>
+                <ListViewItem Height="48" Width="149">
+
+                    <StackPanel Orientation="Horizontal" >
+                        <TextBlock Text="Romcio" FontSize="17" VerticalAlignment="Center"/>
                     </StackPanel>
                 </ListViewItem>
                 <Label Content="PLAYLISTY" HorizontalAlignment="Left" VerticalAlignment="Top" FontWeight="Bold" FontSize="15" Foreground ="AntiqueWhite" FontFamily="Montserrat" Height="33" Width="150"/>
-                <ListViewItem Height="48" Width="112" Margin="20 0">
-                    <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="Playlist1" FontSize="17" VerticalAlignment="Center" Margin="20 0"/>
+                <ListViewItem Height="48" Width="149">
+
+                    <StackPanel Orientation="Horizontal" >
+                        <TextBlock Text="TACO muzyczka" FontSize="17" VerticalAlignment="Center" Width="150"/>
                     </StackPanel>
                 </ListViewItem>
-                <ListViewItem Height="48" Width="112" Margin="20 0">
-                    <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="Playlist2" FontSize="17" VerticalAlignment="Center" Margin="20 0"/>
+                <ListViewItem Height="48" Width="149">
+
+                    <StackPanel Orientation="Horizontal" >
+                        <TextBlock Text="Emi Style" FontSize="17" VerticalAlignment="Center" Width="150"/>
                     </StackPanel>
                 </ListViewItem>
             </ListView>

@@ -60,41 +60,6 @@ namespace PLAYLISTENING_WPF
             Application.Current.MainWindow.WindowState = WindowState.Minimized;
         }
     }
-    /*
-            private void Button_Click_1(object sender, RoutedEventArgs e)
-            {
 
-            }
-
-            private void Button_Click_2(object sender, RoutedEventArgs e)
-            {
-
-            }
-
-            private void Button_Click_3(object sender, RoutedEventArgs e)
-            {
-
-            }
-
-            private void Button_Click_4(object sender, RoutedEventArgs e)
-            {
-
-            }
-
-            private void ListViewItem_Selected(object sender, RoutedEventArgs e)
-            {
-
-            }
-
-            private void ListViewItem_Selected_1(object sender, RoutedEventArgs e)
-            {
-
-            }
-
-            private void ListViewMenu_SelectionChanged(object sender, SelectionChangedEventArgs e)
-            {
-
-            }
-        }*/
 }
 
