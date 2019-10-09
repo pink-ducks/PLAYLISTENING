@@ -42,6 +42,7 @@
                     </Button>
                 </StackPanel>
             </StackPanel>
+            <Image x:Name="UserImage" Source ="Queen.png" Width="50" Height="50" Margin="246,10,669,580"/>
         </Grid>
         <Grid Width="230" HorizontalAlignment="Left" Background="#FF222222">
             <materialDesign:TransitioningContent OpeningEffect="{materialDesign:TransitionEffect SlideInFromLeft, Duration=0:0:0.2}" Margin="0,0,25,0">
@@ -85,9 +86,8 @@
             </ListView>
         </Grid>
         <Border x:Name="BottomBorder" BorderBrush="#FF1DB954" BorderThickness="0.1" Height="15" VerticalAlignment="Bottom" Background="#FF1DB954" Margin="0,0,0,0"/>
-        <Image HorizontalAlignment="Left" Height="26" VerticalAlignment="Top" Width="37" Grid.Column="1" Margin="399.2,12,0,0" RenderTransformOrigin="-0.322,0.469" />
         <StackPanel Margin="265,50,35,515.4">
-            <Label Content="COMPARE YOUR PLAYLISTS" FontWeight="Bold" FontSize="30" Foreground ="AntiqueWhite" FontFamily="Montserrat" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="20" Height="66" Width="381"/>
+            <Label Content="COMPARE YOUR PLAYLISTS" FontWeight="Bold" FontSize="30" Foreground ="AntiqueWhite" FontFamily="Montserrat" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="116,20,78,20" Height="66" Width="471"/>
         </StackPanel>
         <StackPanel Margin="279.6,325,565.8,275.8">
             <Label Content="WITH" FontWeight="Bold" FontSize="20" Foreground ="AntiqueWhite" FontFamily="Montserrat" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10.1,0,-0.3,0" Height="55" Width="110"/>
@@ -143,6 +143,7 @@
                 <materialDesign:PackIcon Kind="ArrowRightBold" Foreground="White" Height="41" Width="29"/>
             </Button>
         </StackPanel>
+        <Label x:Name="userName" Content="Username" Foreground ="AntiqueWhite" FontFamily="Montserrat" Margin="300,20,254.2,590.4" FontSize="16" FontWeight="Bold" Height="30" Width="400"/>
 
     </Grid>
 </Window>
