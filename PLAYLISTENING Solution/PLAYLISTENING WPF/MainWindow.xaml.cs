@@ -27,6 +27,7 @@ namespace PLAYLISTENING_WPF
         public MainWindow()
         {
             InitializeComponent();
+          
         }
 
         private async void Window_Loaded(object sender, RoutedEventArgs e)
@@ -37,7 +38,6 @@ namespace PLAYLISTENING_WPF
             Grabber.UploadUserData(User);
            
             userName.Content = User.Name; // update username
-
             UserImage.Source = User.GetUserImage(); // update user image
         }
 
@@ -53,12 +53,47 @@ namespace PLAYLISTENING_WPF
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Application.Current.MainWindow.WindowState = WindowState.Maximized;
+            if (this.WindowState == WindowState.Maximized)
+            {
+                this.WindowState = WindowState.Normal;
+            }
+            else
+            {
+                Application.Current.MainWindow.WindowState = WindowState.Maximized;
+            }
         }
         private void ButtonMin_Click(object sender, RoutedEventArgs e)
         {
             Application.Current.MainWindow.WindowState = WindowState.Minimized;
         }
+        private void MoveCursorMenu(int index)
+        {
+            TrainsitionigContentSlide.OnApplyTemplate();
+            GridCursor.Margin = new Thickness(0, (100 + (60 * index)), 0, 0);
+        }
+        
+        private void ListViewMenu_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            int index = ListViewMenu.SelectedIndex;
+            MoveCursorMenu(index);
+            switch (index)
+            {
+                case 0:
+                    GridPrincipal.Children.Clear();
+                    GridPrincipal.Children.Add(new Home());
+                    break;
+                case 1:
+                    GridPrincipal.Children.Clear();
+                    GridPrincipal.Children.Add(new Matus());
+                    break;
+                default:
+                    break;
+            }
+
+
+        }
+
+   
     }
 
 }
