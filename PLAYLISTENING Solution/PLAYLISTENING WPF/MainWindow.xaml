@@ -37,7 +37,7 @@
                         <RowDefinition Height="295*"/>
                     </Grid.RowDefinitions>
                     <Image x:Name="UserImage" Source ="Queen.png" Width="50" Height="50" Margin="246,10,658.8,10.6"/>
-                    <Label x:Name="userName" Content="Username" Foreground ="AntiqueWhite" FontFamily="Montserrat" Margin="325,16,230,24.4" FontSize="16" FontWeight="Bold" Height="30" Width="400"/>
+                    <Label x:Name="UserName" Content="Username" Foreground ="AntiqueWhite" FontFamily="Montserrat" Margin="325,16,230,24.4" FontSize="16" FontWeight="Bold" Height="30" Width="400"/>
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,-2,10,49.4" Width="100">
                         <Button Width="30" Height="30" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" Foreground="#FF17381A" VerticalAlignment="Top" Click="ButtonMin_Click">
                             <materialDesign:PackIcon Kind="WindowMinimize" Foreground="White"/>

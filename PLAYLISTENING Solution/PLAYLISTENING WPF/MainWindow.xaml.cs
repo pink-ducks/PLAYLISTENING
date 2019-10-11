@@ -22,6 +22,7 @@ namespace PLAYLISTENING_WPF
     {
         APIConnector Connector = new APIConnector();
         APIDataGrabber Grabber = new APIDataGrabber(); // download data from API
+        
         User User = new User("213pado37eomvngbs4vac5qra"); // app user ("user_id")
 
         public MainWindow()
@@ -36,9 +37,13 @@ namespace PLAYLISTENING_WPF
 
             Connector.GiveSpotifyAccessFor(Grabber);
             Grabber.UploadUserData(User);
-           
-            userName.Content = User.Name; // update username
-            UserImage.Source = User.GetUserImage(); // update user image
+                      
+            FrontManager Front = new FrontManager(UserName, UserImage, ListViewMenu);
+
+            // change frontend
+            Front.updateUsername(User);
+            Front.updateUserImage(User);
+            Front.updatePlaylistsNames(User);
         }
 
         private void ButtonFechar_Click(object sender, RoutedEventArgs e)
