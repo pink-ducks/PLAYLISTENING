@@ -22,7 +22,10 @@ namespace PLAYLISTENING_WPF
     {
         APIConnector Connector = new APIConnector();
         APIDataGrabber Grabber = new APIDataGrabber(); // download data from API
-        
+
+        // 11132603634 - Mateusz
+        // 213pado37eomvngbs4vac5qra - Paweł
+
         User User = new User("213pado37eomvngbs4vac5qra"); // app user ("user_id")
 
         public MainWindow()
@@ -41,9 +44,7 @@ namespace PLAYLISTENING_WPF
             FrontManager Front = new FrontManager(UserName, UserImage, ListViewMenu);
 
             // change frontend
-            Front.updateUsername(User);
-            Front.updateUserImage(User);
-            Front.updatePlaylistsNames(User);
+            Front.updateFrontend(User);
         }
 
         private void ButtonFechar_Click(object sender, RoutedEventArgs e)

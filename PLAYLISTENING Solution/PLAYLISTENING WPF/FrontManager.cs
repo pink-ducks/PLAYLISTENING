@@ -19,10 +19,30 @@ namespace PLAYLISTENING_WPF
             this.userImage = userImage;
             this.viewMenu = viewMenu;
         }
+        public void updateFrontend(User user)
+        {
+            updateUsername(user);
+            updateUserImage(user);
+            updatePlaylistsNames(user);
+        }
         public void updatePlaylistsNames(User user)
         {
-            viewMenu.Items[5] = user.Playlists[0].Name;
-            viewMenu.Items[6] = user.Playlists[1].Name;
+            if (user.Playlists.Count > 0)
+            {
+                for (int i = 0; i < user.Playlists.Count; i++)
+                {
+                    if(i >= 2)
+                    {
+                        viewMenu.Items.Add(new ListViewItem());
+                    }
+                    viewMenu.Items[i + 5] = user.Playlists[i].Name;
+                }
+            }
+            else
+            {
+                viewMenu.Items[5] = null;
+                viewMenu.Items[6] = null;
+            }
         }
 
         public void updateUsername(User user)
@@ -34,5 +54,6 @@ namespace PLAYLISTENING_WPF
         {
             userImage.Source = user.GetUserImage();
         }
+
     }
 }
