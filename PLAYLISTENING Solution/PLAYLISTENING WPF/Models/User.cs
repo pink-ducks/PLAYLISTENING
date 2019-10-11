@@ -11,8 +11,7 @@ namespace PLAYLISTENING_WPF.Models
 {
     public class User: Model
     {
-        private ArrayList playlistsIDs;
-        public ArrayList PlaylistsIDs { get => playlistsIDs; set => playlistsIDs = value; }
+        public List<Playlist> Playlists = new List<Playlist>();
         // constructor
         public User(string id) => this.id = id;
         public BitmapImage GetUserImage()

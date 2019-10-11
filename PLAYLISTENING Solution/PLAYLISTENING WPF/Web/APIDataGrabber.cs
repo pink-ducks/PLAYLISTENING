@@ -19,7 +19,7 @@ namespace PLAYLISTENING_WPF.Web
         public void UploadUserData(User user)
         {
             user.Name = this.GetUserName(user.Id);
-            user.PlaylistsIDs = this.GetUserPlaylistsIDs(user.Id);
+            user.Playlists = this.GetUserPlaylists(user.Id);
             user.ImageURL = this.GetUserImageURL(user.Id);
         }
         public string GetUserName(string userId)
@@ -38,19 +38,19 @@ namespace PLAYLISTENING_WPF.Web
 
             return userName;
         }
-        public ArrayList GetUserPlaylistsIDs(string userId)
+        public List<Playlist> GetUserPlaylists(string userId)
         {
-            ArrayList playlistsIDs = new ArrayList();
+            List<Playlist> Playlists = new List<Playlist>();
             try {
-                Paging<SimplePlaylist> userPlaylists = spotify.GetUserPlaylists(userId);
-                userPlaylists.Items.ForEach(playlist => playlistsIDs.Add(playlist.Id));
+                Paging<SimplePlaylist> playlistsIds = spotify.GetUserPlaylists(userId); // download playlists info from spotify
+                playlistsIds.Items.ForEach(playlist => Playlists.Add(new Playlist(playlist.Id)));
             }
             catch (Exception ex)
             {
                 var a = ex.Message.ToString();
             }
 
-            return playlistsIDs;
+            return Playlists;
         }
 
         public string GetUserImageURL(string userId)

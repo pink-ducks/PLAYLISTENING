@@ -13,7 +13,7 @@ namespace PLAYLISTENING_Unit_Tests
         {
             APIConnector Connector = new APIConnector();
             APIDataGrabber Grabber = new APIDataGrabber(); // download data from API
-            User User = new User("213pado37eomvngbs4vac5qra"); // app user ("user_id")
+            User User = new User("213pado37eomvngbs4vac5qra"); // Paweł Tomaszewski
 
             await Connector.ConnectWithAPI();
             Connector.GiveSpotifyAccessFor(Grabber);
@@ -36,6 +36,22 @@ namespace PLAYLISTENING_Unit_Tests
             Grabber.UploadUserData(EmptyUser);
 
             Assert.IsNull(EmptyUser.Name);
+        }
+
+        [TestMethod]
+        public async System.Threading.Tasks.Task GetPlaylistsNamesTest()
+        {
+            APIConnector Connector = new APIConnector();
+            APIDataGrabber Grabber = new APIDataGrabber(); // download data from API
+            User User = new User("11132603634"); // Mateusz Piwowarski
+
+            await Connector.ConnectWithAPI();
+            Connector.GiveSpotifyAccessFor(Grabber);
+            Grabber.UploadUserData(User);
+            
+            string expectedName1 = "penta krul";
+
+            Assert.AreEqual(expectedName1, User.Playlists[0].Name);
         }
     }
 }

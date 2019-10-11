@@ -12,5 +12,11 @@ namespace PLAYLISTENING_WPF.Models
         private ArrayList tracksIDs;
 
         public ArrayList TracksIDs { get => tracksIDs; set => tracksIDs = value; }
+
+        public Playlist(string id)
+        {
+            Id = id;
+
+        }
     }
 }
