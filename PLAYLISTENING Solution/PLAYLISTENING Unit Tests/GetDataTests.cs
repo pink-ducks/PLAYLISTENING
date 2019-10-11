@@ -39,19 +39,35 @@ namespace PLAYLISTENING_Unit_Tests
         }
 
         [TestMethod]
+        public async System.Threading.Tasks.Task GetPlaylistIDTest()
+        {
+            APIConnector Connector = new APIConnector();
+            APIDataGrabber Grabber = new APIDataGrabber(); // download data from API
+            User User = new User("213pado37eomvngbs4vac5qra"); // Paweł Tomaszewski
+
+            await Connector.ConnectWithAPI();
+            Connector.GiveSpotifyAccessFor(Grabber);
+            Grabber.UploadUserData(User);
+
+            string expectedID = "7vyoQ7H2r5rblUR42a6I4t";
+
+            Assert.AreEqual(expectedID, User.Playlists[1].Id);
+        }
+
+        [TestMethod]
         public async System.Threading.Tasks.Task GetPlaylistsNamesTest()
         {
             APIConnector Connector = new APIConnector();
             APIDataGrabber Grabber = new APIDataGrabber(); // download data from API
-            User User = new User("11132603634"); // Mateusz Piwowarski
+            User User = new User("213pado37eomvngbs4vac5qra"); // Paweł Tomaszewski
 
             await Connector.ConnectWithAPI();
             Connector.GiveSpotifyAccessFor(Grabber);
             Grabber.UploadUserData(User);
             
-            string expectedName1 = "penta krul";
+            string expectedName1 = "Music";
 
-            Assert.AreEqual(expectedName1, User.Playlists[0].Name);
+            Assert.AreEqual(expectedName1, User.Playlists[1].Name);
         }
     }
 }

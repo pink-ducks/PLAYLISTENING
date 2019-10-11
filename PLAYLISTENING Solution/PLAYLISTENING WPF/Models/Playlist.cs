@@ -13,10 +13,11 @@ namespace PLAYLISTENING_WPF.Models
 
         public ArrayList TracksIDs { get => tracksIDs; set => tracksIDs = value; }
 
-        public Playlist(string id)
+        public Playlist(string id, string name, string imageURL)
         {
             Id = id;
-
+            Name = name;
+            ImageURL = imageURL;
         }
     }
 }

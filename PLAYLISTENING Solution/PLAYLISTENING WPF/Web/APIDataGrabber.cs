@@ -43,7 +43,7 @@ namespace PLAYLISTENING_WPF.Web
             List<Playlist> Playlists = new List<Playlist>();
             try {
                 Paging<SimplePlaylist> playlistsIds = spotify.GetUserPlaylists(userId); // download playlists info from spotify
-                playlistsIds.Items.ForEach(playlist => Playlists.Add(new Playlist(playlist.Id)));
+                playlistsIds.Items.ForEach(playlist => Playlists.Add(new Playlist(playlist.Id, playlist.Name, playlist.Images[0].Url)));
             }
             catch (Exception ex)
             {
