@@ -15,14 +15,14 @@ using System.Windows.Shapes;
 
 namespace PLAYLISTENING_WPF
 {
-    /// <summary>
-    /// Interaction logic for Home.xaml
-    /// </summary>
     public partial class Home : UserControl
     {
         public Home()
         {
             InitializeComponent();
+
+            FrontManager Front = FrontManager.Instance;
+            Front.loadPlaylistsImages(PlaylistImage1, PlaylistImage2, PlaylistImage3);
         }
     }
 }

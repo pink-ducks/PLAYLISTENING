@@ -34,6 +34,7 @@ namespace PLAYLISTENING_WPF.Web
             catch (Exception ex)
             {
                 var a = ex.Message.ToString();
+                Console.WriteLine(a);
             }
 
             return userName;
@@ -48,6 +49,7 @@ namespace PLAYLISTENING_WPF.Web
             catch (Exception ex)
             {
                 var a = ex.Message.ToString();
+                Console.WriteLine(a);
             }
 
             return Playlists;
@@ -72,6 +74,7 @@ namespace PLAYLISTENING_WPF.Web
             catch (Exception ex)
             {
                 var a = ex.Message.ToString();
+                Console.WriteLine(a);
             }
 
             return imageURL;

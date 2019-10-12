@@ -31,7 +31,6 @@ namespace PLAYLISTENING_WPF
         public MainWindow()
         {
             InitializeComponent();
-          
         }
 
         private async void Window_Loaded(object sender, RoutedEventArgs e)
@@ -52,8 +51,9 @@ namespace PLAYLISTENING_WPF
 
             Connector.GiveSpotifyAccessFor(Grabber);
             Grabber.UploadUserData(User);
-                      
-            FrontManager Front = new FrontManager(UserName, UserImage, ListViewMenu);
+
+            FrontManager Front = FrontManager.Instance;
+            Front.loadMainWindowTools(UserName, UserImage, ListViewMenu);
 
             // change frontend
             Front.updateFrontend(User);

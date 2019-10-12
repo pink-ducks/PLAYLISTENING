@@ -65,9 +65,25 @@ namespace PLAYLISTENING_Unit_Tests
             Connector.GiveSpotifyAccessFor(Grabber);
             Grabber.UploadUserData(User);
             
-            string expectedName1 = "Music";
+            string expectedPlaylistName = "Music";
 
-            Assert.AreEqual(expectedName1, User.Playlists[1].Name);
+            Assert.AreEqual(expectedPlaylistName, User.Playlists[1].Name);
+        }
+
+        [TestMethod]
+        public async System.Threading.Tasks.Task GetPlaylistsImagesURLTest()
+        {
+            APIConnector Connector = new APIConnector();
+            APIDataGrabber Grabber = new APIDataGrabber(); // download data from API
+            User User = new User("213pado37eomvngbs4vac5qra"); // Paweł Tomaszewski
+
+            await Connector.ConnectWithAPI();
+            Connector.GiveSpotifyAccessFor(Grabber);
+            Grabber.UploadUserData(User);
+
+            string expectedURL = "https://i.scdn.co/image/2654511f372969510abf52e52fee458ceeb15bed";
+
+            Assert.AreEqual(expectedURL, User.Playlists[1].ImageURL);
         }
     }
 }

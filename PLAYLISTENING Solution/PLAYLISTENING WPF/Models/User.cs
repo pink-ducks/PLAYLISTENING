@@ -21,6 +21,7 @@ namespace PLAYLISTENING_WPF.Models
             {
                 if(this.id != null)
                 {
+                    // create new image to replace old one
                     var image = new Image();
                     var fullFilePath = this.ImageURL;
 
@@ -32,6 +33,7 @@ namespace PLAYLISTENING_WPF.Models
             catch (Exception ex)
             {
                 var a = ex.Message.ToString();
+                Console.WriteLine(a);
             }
 
             return bitmap;
