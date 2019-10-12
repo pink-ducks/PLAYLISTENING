@@ -22,7 +22,9 @@ namespace PLAYLISTENING_WPF
             InitializeComponent();
 
             FrontManager Front = FrontManager.Instance;
+
             Front.loadPlaylistsImages(PlaylistImage1, PlaylistImage2, PlaylistImage3);
+
         }
     }
 }

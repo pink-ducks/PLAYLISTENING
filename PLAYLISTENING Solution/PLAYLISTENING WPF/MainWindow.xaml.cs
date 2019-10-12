@@ -54,9 +54,16 @@ namespace PLAYLISTENING_WPF
 
             FrontManager Front = FrontManager.Instance;
             Front.loadMainWindowTools(UserName, UserImage, ListViewMenu);
-
-            // change frontend
-            Front.updateFrontend(User);
+            try
+            {
+                // change frontend
+                Front.updateFrontend(User);
+            }
+            catch (Exception ex)
+            {
+                var a = ex.Message.ToString();
+                Console.WriteLine(a);
+            }
         }
 
         private void ButtonFechar_Click(object sender, RoutedEventArgs e)
