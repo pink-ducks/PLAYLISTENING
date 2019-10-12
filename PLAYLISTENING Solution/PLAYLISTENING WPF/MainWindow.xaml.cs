@@ -36,7 +36,19 @@ namespace PLAYLISTENING_WPF
 
         private async void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            await Connector.ConnectWithAPI();
+            try
+            {
+                await Connector.ConnectWithAPI();
+            }
+            catch (Exception ex)
+            {
+                var a = ex.Message.ToString();
+                if (a != null)
+                {
+                    MessageBox.Show("You need internet connection to use Playlistening app");
+                    System.Windows.Application.Current.Shutdown();
+                }
+            }
 
             Connector.GiveSpotifyAccessFor(Grabber);
             Grabber.UploadUserData(User);
