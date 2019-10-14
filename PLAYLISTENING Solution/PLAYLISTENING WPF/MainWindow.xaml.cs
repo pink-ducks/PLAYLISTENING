@@ -26,7 +26,7 @@ namespace PLAYLISTENING_WPF
         // 11132603634 - Mateusz
         // 213pado37eomvngbs4vac5qra - Paweł
 
-        User User = new User("213pado37eomvngbs4vac5qra"); // app user ("user_id")
+        User User = new User("11132603634"); // app user ("user_id")
 
         public MainWindow()
         {
