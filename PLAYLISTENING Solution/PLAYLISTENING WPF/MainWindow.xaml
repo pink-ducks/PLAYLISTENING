@@ -85,7 +85,7 @@
                         <TextBlock Text="Home"  Foreground ="AntiqueWhite" FontFamily="Montserrat" VerticalAlignment="Top" Margin="2,13,0,-5.4" TextOptions.TextHintingMode="Animated" RenderTransformOrigin="0.88,0.106" FontSize="15"  FontWeight="Bold" Height="36" Width="57"/>
                     </StackPanel>
                 </ListViewItem>
-
+                <Label x:Name="FriendLabel" Content="Friends" Foreground="AntiqueWhite"  FontFamily="Montserrat" FontSize="16" FontWeight="Bold" />
                 <ListViewItem Height="60">
                     <StackPanel Orientation="Horizontal" >
                         <TextBlock Text="Mateusz" FontSize="17" VerticalAlignment="Center"  FontFamily="Montserrat"/>

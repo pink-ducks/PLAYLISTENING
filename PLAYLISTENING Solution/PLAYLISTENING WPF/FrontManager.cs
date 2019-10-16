@@ -15,10 +15,7 @@ namespace PLAYLISTENING_WPF
         private static readonly FrontManager instance = new FrontManager();
         private Label userName = new Label();
         private Image userImage = new Image();
-        private Image[] playlistsImages = new Image[3];
-       //private Image playlistImage1 = new Image();
-        //private Image playlistImage2 = new Image();
-        //private Image playlistImage3 = new Image();
+        private Image[] playlistsImages = new Image[3];       
         private ListView viewMenu= new ListView();
         static FrontManager() { } 
         private FrontManager() { }
@@ -78,7 +75,7 @@ namespace PLAYLISTENING_WPF
                     {
                         viewMenu.Items.Add(new ListViewItem());
                     }
-                    viewMenu.Items[i + 5] = user.Playlists[i].Name;
+                    viewMenu.Items[i + 6] = user.Playlists[i].Name; //6 is a magic number + it does not work, when you add items to the viewMenu list
                 }
             }
             else
