@@ -15,9 +15,10 @@ namespace PLAYLISTENING_WPF
         private static readonly FrontManager instance = new FrontManager();
         private Label userName = new Label();
         private Image userImage = new Image();
-        private Image playlistImage1 = new Image();
-        private Image playlistImage2 = new Image();
-        private Image playlistImage3 = new Image();
+        private Image[] playlistsImages = new Image[3];
+       //private Image playlistImage1 = new Image();
+        //private Image playlistImage2 = new Image();
+        //private Image playlistImage3 = new Image();
         private ListView viewMenu= new ListView();
         static FrontManager() { } 
         private FrontManager() { }
@@ -35,10 +36,10 @@ namespace PLAYLISTENING_WPF
             this.viewMenu = viewMenu;
         }
         public void loadPlaylistsImages(Image playlistImage1, Image playlistImage2, Image playlistImage3)
-        {
-            this.playlistImage1 = playlistImage1;
-            this.playlistImage2 = playlistImage2;
-            this.playlistImage3 = playlistImage3;
+        {            
+            this.playlistsImages[0] = playlistImage1;
+            this.playlistsImages[1] = playlistImage2;
+            this.playlistsImages[2] = playlistImage3;
         }
 
         public void updateFrontend(User user)
@@ -63,17 +64,7 @@ namespace PLAYLISTENING_WPF
             bitmap.BeginInit();
             bitmap.UriSource = new Uri(fullFilePath, UriKind.Absolute);
             bitmap.EndInit();
-                switch (i) {
-                    case 0:
-                        playlistImage1.Source = bitmap;
-                        break;
-                    case 1:
-                        playlistImage2.Source = bitmap;
-                        break;
-                    case 2:
-                        playlistImage3.Source = bitmap;
-                        break;
-                }                            
+            playlistsImages[i].Source = bitmap;
             }            
         }
 
