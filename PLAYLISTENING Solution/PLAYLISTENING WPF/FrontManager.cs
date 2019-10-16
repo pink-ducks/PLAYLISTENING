@@ -51,48 +51,29 @@ namespace PLAYLISTENING_WPF
 
         private void updatePlaylistsImages(User user)
         {
-            int User_playlist_count_max3 = Math.Min(user.Playlists.Count, 3);
-
-            if (User_playlist_count_max3 > 0)
+           // int User_playlist_count_max3 = Math.Min(user.Playlists.Count, 3);
+            for(int i=0;i< Math.Min(user.Playlists.Count, 3);i++)
             {
             // create new image to replace old one
-            // playlist image 1:
+            // playlist images:
             BitmapImage bitmap = new BitmapImage();
             var image = new Image();
-            var fullFilePath = user.Playlists[0].ImageURL;
+            var fullFilePath = user.Playlists[i].ImageURL;
 
             bitmap.BeginInit();
             bitmap.UriSource = new Uri(fullFilePath, UriKind.Absolute);
             bitmap.EndInit();
-
-            playlistImage1.Source = bitmap;
-                if (User_playlist_count_max3 > 1)
-                {
-                    // playlist image 2:
-                    BitmapImage bitmap2 = new BitmapImage();
-                    var image2 = new Image();
-                    var fullFilePath2 = user.Playlists[1].ImageURL;
-
-                    bitmap2.BeginInit();
-                    bitmap2.UriSource = new Uri(fullFilePath2, UriKind.Absolute);
-                    bitmap2.EndInit();
-
-                    playlistImage2.Source = bitmap2;
-                        if (User_playlist_count_max3 > 2)
-                        {
-                        // playlist image 3:
-                        BitmapImage bitmap3 = new BitmapImage();
-                        var image3 = new Image();
-                        var fullFilePath3 = user.Playlists[2].ImageURL;
-
-                        bitmap3.BeginInit();
-                        bitmap3.UriSource = new Uri(fullFilePath3, UriKind.Absolute);
-                        bitmap3.EndInit();
-
-                        playlistImage3.Source = bitmap3;
-
-                    }
-                }
+                switch (i) {
+                    case 0:
+                        playlistImage1.Source = bitmap;
+                        break;
+                    case 1:
+                        playlistImage2.Source = bitmap;
+                        break;
+                    case 2:
+                        playlistImage3.Source = bitmap;
+                        break;
+                }                            
             }            
         }
 
