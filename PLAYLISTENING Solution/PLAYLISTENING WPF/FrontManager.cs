@@ -75,7 +75,7 @@ namespace PLAYLISTENING_WPF
                     {
                         viewMenu.Items.Add(new ListViewItem());
                     }
-                    viewMenu.Items[i + 6] = user.Playlists[i].Name; //6 is a magic number + it does not work, when you add items to the viewMenu list
+                    viewMenu.Items[i + 6] = user.Playlists[i].Name; //6 is a magic number + it does not work when you add items to the viewMenu list
                 }
             }
             else
