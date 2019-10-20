@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media.Imaging;
 
@@ -16,7 +17,10 @@ namespace PLAYLISTENING_WPF
         private Label userName = new Label();
         private Image userImage = new Image();
         private Image[] playlistsImages = new Image[3];       
-        private ListView viewMenu= new ListView();
+        private ListView viewMenu = new ListView();
+        private Button leftPlaylistButton = new Button();
+        private Button rightPlaylistButton = new Button();
+
         public bool blockPlaylistArrows = true;
         static FrontManager() { } 
         private FrontManager() { }
@@ -40,12 +44,32 @@ namespace PLAYLISTENING_WPF
             this.playlistsImages[2] = playlistImage3;
         }
 
+        public void loadArrowsButtons(Button playlistLeft, Button playlistRight)
+        {
+            this.leftPlaylistButton = playlistLeft;
+            this.rightPlaylistButton = playlistRight;
+        }
+
         public void updateFrontend(User user)
         {
             updateUsername(user);
             updateUserImage(user);
             updatePlaylistsNames(user);
             updatePlaylistsImages(user);
+        }
+        public void updatePlaylistImage(int userPlaylistIndex, int playlistImageIndex, User user)
+        {
+            //if (userPlaylistIndex == user.Playlists.Count)
+            //    userPlaylistIndex -= user.Playlists.Count;
+
+            BitmapImage bitmap = new BitmapImage();
+            var image = new Image();
+            var fullFilePath = user.Playlists[userPlaylistIndex].ImageURL;
+
+            bitmap.BeginInit();
+            bitmap.UriSource = new Uri(fullFilePath, UriKind.Absolute);
+            bitmap.EndInit();
+            playlistsImages[playlistImageIndex].Source = bitmap;
         }
 
         private void updatePlaylistsImages(User user)
@@ -55,17 +79,18 @@ namespace PLAYLISTENING_WPF
            // int User_playlist_count_max3 = Math.Min(user.Playlists.Count, 3);
             for(int i=0;i< Math.Min(user.Playlists.Count, 3);i++)
             {
-            // create new image to replace old one
-            // playlist images:
-            BitmapImage bitmap = new BitmapImage();
-            var image = new Image();
-            var fullFilePath = user.Playlists[i].ImageURL;
+                // create new image to replace old one
+                // playlist images:
+                this.updatePlaylistImage(i , i, user);
+            }
+        }
 
-            bitmap.BeginInit();
-            bitmap.UriSource = new Uri(fullFilePath, UriKind.Absolute);
-            bitmap.EndInit();
-            playlistsImages[i].Source = bitmap;
-            }            
+        public void BlockPlaylistArrowsButtons()
+        {
+            leftPlaylistButton.IsEnabled = false;
+            leftPlaylistButton.Visibility = Visibility.Hidden;
+            rightPlaylistButton.IsEnabled = false;
+            rightPlaylistButton.Visibility = Visibility.Hidden;
         }
 
         public void updatePlaylistsNames(User user)

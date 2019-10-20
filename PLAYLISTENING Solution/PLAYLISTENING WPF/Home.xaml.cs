@@ -12,36 +12,57 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using PLAYLISTENING_WPF.Models;
+using PLAYLISTENING_WPF.Web;
 
 namespace PLAYLISTENING_WPF
 {
     public partial class Home : UserControl
     {
+        static int PlaylistIndex = 0;
+        FrontManager Front = FrontManager.Instance;
         public Home()
         {
             InitializeComponent();
-
-            FrontManager Front = FrontManager.Instance;
-
             Front.loadPlaylistsImages(PlaylistImage1, PlaylistImage2, PlaylistImage3);
-            if(Front.blockPlaylistArrows)
-            {
-                LeftArrowPlaylist.IsEnabled = false;
-                LeftArrowPlaylist.Visibility = Visibility.Hidden;
-                RightArrowPlaylist.IsEnabled = false;
-                RightArrowPlaylist.Visibility = Visibility.Hidden;
-            }
+            Front.loadArrowsButtons(LeftArrowPlaylist, RightArrowPlaylist);
         }
 
         private void RightArrowPlaylistClick(object sender, RoutedEventArgs e)
         {
-            FrontManager front = FrontManager.Instance;
-           
+            PlaylistIndex++;
+
+            FrontManager Front = FrontManager.Instance;
+            User user = User.Instance;
+
+            if (PlaylistIndex + 2 == user.Playlists.Count)
+                PlaylistIndex -= user.Playlists.Count - 2;
+
+            Front.updatePlaylistImage(PlaylistIndex, 0, user);
+            Front.updatePlaylistImage(PlaylistIndex+1, 1, user);
+            Front.updatePlaylistImage(PlaylistIndex+2, 2, user);
         }
 
         private void LeftArrowPlaylistClick(object sender, RoutedEventArgs e)
         {
-            FrontManager front = FrontManager.Instance;
+            
+            PlaylistIndex--;
+            if(PlaylistIndex < 0)
+            {
+                PlaylistIndex++;
+            }
+            else 
+            {
+                FrontManager Front = FrontManager.Instance;
+                User user = User.Instance;
+
+                if (PlaylistIndex + 2 == user.Playlists.Count)
+                    PlaylistIndex -= user.Playlists.Count - 2;
+
+                Front.updatePlaylistImage(PlaylistIndex, 0, user);
+                Front.updatePlaylistImage(PlaylistIndex + 1, 1, user);
+                Front.updatePlaylistImage(PlaylistIndex + 2, 2, user);
+            }
         }
     }
 }
