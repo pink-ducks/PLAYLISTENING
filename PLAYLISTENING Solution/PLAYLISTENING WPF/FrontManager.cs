@@ -17,6 +17,7 @@ namespace PLAYLISTENING_WPF
         private Image userImage = new Image();
         private Image[] playlistsImages = new Image[3];       
         private ListView viewMenu= new ListView();
+        public bool blockPlaylistArrows = true;
         static FrontManager() { } 
         private FrontManager() { }
         public static FrontManager Instance
@@ -49,6 +50,8 @@ namespace PLAYLISTENING_WPF
 
         private void updatePlaylistsImages(User user)
         {
+            if (user.Playlists.Count > 3)
+                blockPlaylistArrows = false;
            // int User_playlist_count_max3 = Math.Min(user.Playlists.Count, 3);
             for(int i=0;i< Math.Min(user.Playlists.Count, 3);i++)
             {

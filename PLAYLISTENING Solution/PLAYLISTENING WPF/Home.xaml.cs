@@ -24,7 +24,24 @@ namespace PLAYLISTENING_WPF
             FrontManager Front = FrontManager.Instance;
 
             Front.loadPlaylistsImages(PlaylistImage1, PlaylistImage2, PlaylistImage3);
+            if(Front.blockPlaylistArrows)
+            {
+                LeftArrowPlaylist.IsEnabled = false;
+                LeftArrowPlaylist.Visibility = Visibility.Hidden;
+                RightArrowPlaylist.IsEnabled = false;
+                RightArrowPlaylist.Visibility = Visibility.Hidden;
+            }
+        }
 
+        private void RightArrowPlaylistClick(object sender, RoutedEventArgs e)
+        {
+            FrontManager front = FrontManager.Instance;
+           
+        }
+
+        private void LeftArrowPlaylistClick(object sender, RoutedEventArgs e)
+        {
+            FrontManager front = FrontManager.Instance;
         }
     }
 }

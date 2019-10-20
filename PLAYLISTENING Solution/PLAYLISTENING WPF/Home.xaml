@@ -27,7 +27,7 @@
                     <TranslateTransform Y="0.598"/>
                 </TransformGroup>
             </StackPanel.RenderTransform>
-            <Button Margin="8,10,8,0" Width="47" Background="Transparent" BorderBrush="{x:Null}" HorizontalAlignment="Center" VerticalAlignment="Center" Height="170">
+            <Button x:Name="LeftArrowPlaylist" Margin="8,10,8,0" Width="47" Background="Transparent" BorderBrush="{x:Null}" HorizontalAlignment="Center" VerticalAlignment="Center" Height="170" Click="LeftArrowPlaylistClick">
                 <materialDesign:PackIcon Kind="ArrowLeftBold" Foreground="White" Height="41" Width="29"/>
             </Button>
             <Button Margin="8,0,8,8.2" Width="140" Background="Transparent" BorderBrush="{x:Null}" HorizontalAlignment="Center" VerticalAlignment="Center">
@@ -39,7 +39,7 @@
             <Button Margin="8,0,8,8.2" Width="152" Background="Transparent" BorderBrush="{x:Null}" HorizontalAlignment="Center" VerticalAlignment="Center">
                 <Image x:Name="PlaylistImage3" Source ="Queen.png" Stretch="UniformToFill" Height="145" Width="152"/>
             </Button>
-            <Button Margin="8,10,8,0" Width="47" Background="Transparent" BorderBrush="{x:Null}" HorizontalAlignment="Center" VerticalAlignment="Center" Height="170">
+            <Button x:Name="RightArrowPlaylist" Margin="8,10,8,0" Width="47" Background="Transparent" BorderBrush="{x:Null}" HorizontalAlignment="Center" VerticalAlignment="Center" Height="170" Click="RightArrowPlaylistClick">
                 <materialDesign:PackIcon Kind="ArrowRightBold" Foreground="White" Height="41" Width="29"/>
             </Button>
         </StackPanel>
