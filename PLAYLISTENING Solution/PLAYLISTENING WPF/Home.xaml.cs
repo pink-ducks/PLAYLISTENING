@@ -47,22 +47,17 @@ namespace PLAYLISTENING_WPF
         {
             
             PlaylistIndex--;
-            if(PlaylistIndex < 0)
-            {
-                PlaylistIndex++;
-            }
-            else 
-            {
-                FrontManager Front = FrontManager.Instance;
-                User user = User.Instance;
+            FrontManager Front = FrontManager.Instance;
+            User user = User.Instance;
 
-                if (PlaylistIndex + 2 == user.Playlists.Count)
-                    PlaylistIndex -= user.Playlists.Count - 2;
-
-                Front.updatePlaylistImage(PlaylistIndex, 0, user);
-                Front.updatePlaylistImage(PlaylistIndex + 1, 1, user);
-                Front.updatePlaylistImage(PlaylistIndex + 2, 2, user);
+            if (PlaylistIndex == -1)
+            {
+                PlaylistIndex = user.Playlists.Count - 3;
             }
+
+            Front.updatePlaylistImage(PlaylistIndex, 0, user);
+            Front.updatePlaylistImage(PlaylistIndex + 1, 1, user);
+            Front.updatePlaylistImage(PlaylistIndex + 2, 2, user);
         }
     }
 }
