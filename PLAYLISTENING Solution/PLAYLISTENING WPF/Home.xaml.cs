@@ -34,13 +34,30 @@ namespace PLAYLISTENING_WPF
 
             FrontManager Front = FrontManager.Instance;
             User user = User.Instance;
+          
 
-            if (PlaylistIndex + 2 == user.Playlists.Count)
-                PlaylistIndex -= user.Playlists.Count - 2;
+            if (PlaylistIndex == user.Playlists.Count)
+            PlaylistIndex -= user.Playlists.Count - 2;
+            
+            switch (user.Playlists.Count - PlaylistIndex) {   //the result of this substraction tell us how many images can be loaded, without being out of user.Playlists array
+                case 2:
+                    Front.updatePlaylistImage(PlaylistIndex, 0, user);
+                    Front.updatePlaylistImage(PlaylistIndex + 1, 1, user);
+                    Front.updatePlaylistImage(0, 2, user);
+                    break;
 
-            Front.updatePlaylistImage(PlaylistIndex, 0, user);
-            Front.updatePlaylistImage(PlaylistIndex+1, 1, user);
-            Front.updatePlaylistImage(PlaylistIndex+2, 2, user);
+                case 1:
+                    Front.updatePlaylistImage(PlaylistIndex, 0, user);
+                    Front.updatePlaylistImage(0, 1, user);
+                    Front.updatePlaylistImage(1, 2, user);
+                    break;
+
+                default:
+                    Front.updatePlaylistImage(PlaylistIndex, 0, user);
+                    Front.updatePlaylistImage(PlaylistIndex + 1, 1, user);
+                    Front.updatePlaylistImage(PlaylistIndex + 2, 2, user);
+                    break;
+            }       
         }
 
         private void LeftArrowPlaylistClick(object sender, RoutedEventArgs e)
@@ -50,14 +67,31 @@ namespace PLAYLISTENING_WPF
             FrontManager Front = FrontManager.Instance;
             User user = User.Instance;
 
-            if (PlaylistIndex == -1)
+            if (PlaylistIndex == -3)
             {
                 PlaylistIndex = user.Playlists.Count - 3;
             }
 
-            Front.updatePlaylistImage(PlaylistIndex, 0, user);
-            Front.updatePlaylistImage(PlaylistIndex + 1, 1, user);
-            Front.updatePlaylistImage(PlaylistIndex + 2, 2, user);
+            switch (PlaylistIndex) //modulo of this variable tell us how many images need to be loaded from the right end of the user.playlists array
+            {   
+                case -1:
+                    Front.updatePlaylistImage(user.Playlists.Count - 1, 0, user);
+                    Front.updatePlaylistImage(PlaylistIndex + 1, 1, user);
+                    Front.updatePlaylistImage(PlaylistIndex + 2, 2, user);
+                    break;
+
+                case -2:
+                    Front.updatePlaylistImage(user.Playlists.Count - 2, 0, user);
+                    Front.updatePlaylistImage(user.Playlists.Count - 1, 1, user);
+                    Front.updatePlaylistImage(PlaylistIndex + 2, 2, user);
+                    break;
+
+                default:
+                    Front.updatePlaylistImage(PlaylistIndex, 0, user);
+                    Front.updatePlaylistImage(PlaylistIndex + 1, 1, user);
+                    Front.updatePlaylistImage(PlaylistIndex + 2, 2, user);
+                    break;
+            }
         }
     }
 }
