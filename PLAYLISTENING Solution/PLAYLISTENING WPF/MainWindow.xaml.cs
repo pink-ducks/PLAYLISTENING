@@ -21,19 +21,22 @@ namespace PLAYLISTENING_WPF
     public partial class MainWindow : Window
     {
         APIConnector Connector = new APIConnector();
-        APIDataGrabber Grabber = new APIDataGrabber(); // download data from API
+        APIDataGrabber Grabber = APIDataGrabber.Instance; // download data from API
+        FrontManager Front = FrontManager.Instance;
 
-        // 11132603634 - Mateusz
-        // 213pado37eomvngbs4vac5qra - Paweł
-
-        User User = new User("213pado37eomvngbs4vac5qra"); // app user ("user_id")
+        User user = User.Instance;
+ 
 
         public MainWindow()
         {
             InitializeComponent();
+            //user.createUser("213pado37eomvngbs4vac5qra"); // Paweł
+            user.createUser("11132603634"); // Mateusz
+
+            LoadFrontend();
         }
 
-        private async void Window_Loaded(object sender, RoutedEventArgs e)
+        private async void LoadFrontend()
         {
             try
             {
@@ -50,19 +53,33 @@ namespace PLAYLISTENING_WPF
             }
 
             Connector.GiveSpotifyAccessFor(Grabber);
-            Grabber.UploadUserData(User);
+            Grabber.UploadUserData(user);
 
             FrontManager Front = FrontManager.Instance;
             Front.loadMainWindowTools(UserName, UserImage, ListViewMenu);
             try
             {
                 // change frontend
-                Front.updateFrontend(User);
+                Front.updateFrontend(user);
             }
             catch (Exception ex)
             {
                 var a = ex.Message.ToString();
                 Console.WriteLine(a);
+            }
+
+            CheckPlaylistArrows();
+        }
+        private async void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void CheckPlaylistArrows()
+        {
+            if (Front.blockPlaylistArrows)
+            {
+                Front.BlockPlaylistArrowsButtons();
             }
         }
 

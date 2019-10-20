@@ -9,11 +9,26 @@ using System.Windows.Media.Imaging;
 
 namespace PLAYLISTENING_WPF.Models
 {
-    public class User: Model
+    // Singleton pattern
+    public sealed class User: Model
     {
+        private static readonly User instance = new User();
         public List<Playlist> Playlists = new List<Playlist>();
         // constructor
-        public User(string id) => this.id = id;
+        static User() { }
+        private User() { }
+        public static User Instance
+        {
+            get
+            {
+                return instance;
+            }
+        }
+        public void createUser(string id)
+        {
+            this.Id = id;
+        }
+
         public BitmapImage GetUserImage()
         {
             BitmapImage bitmap = new BitmapImage();

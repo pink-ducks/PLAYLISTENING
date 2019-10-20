@@ -11,11 +11,21 @@ using System.Windows.Media.Imaging;
 
 namespace PLAYLISTENING_WPF.Web
 {
-    public class APIDataGrabber
+    // Singleton pattern
+    public sealed class APIDataGrabber
     {
         private SpotifyWebAPI spotify;
-
+        private static readonly APIDataGrabber instance = new APIDataGrabber();
         public SpotifyWebAPI Spotify { get => spotify; set => spotify = value; }
+        static APIDataGrabber() { }
+        private APIDataGrabber() { }
+        public static APIDataGrabber Instance
+        {
+            get
+            {
+                return instance;
+            }
+        }
         public void UploadUserData(User user)
         {
             user.Name = this.GetUserName(user.Id);
