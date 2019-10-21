@@ -74,9 +74,9 @@ namespace PLAYLISTENING_WPF
             }
             else {
                 if (PlaylistIndex == user.Playlists.Count)
-                    PlaylistIndex -= user.Playlists.Count - 2;
-                switch (user.Playlists.Count - PlaylistIndex)
-                {   //the result of this substraction tell us how many images can be loaded, without being out of user.Playlists array
+                    PlaylistIndex -= user.Playlists.Count;
+                switch (user.Playlists.Count - PlaylistIndex) //the result of this substraction tell us how many images can be loaded, without being out of user.Playlists array
+                {   
                     case 2:
                         Front.updatePlaylistImage(PlaylistIndex, 0, user);
                         Front.updatePlaylistImage(PlaylistIndex + 1, 1, user);
